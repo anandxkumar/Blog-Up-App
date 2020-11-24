@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="content-section"> <!--  for creating a box -->
+        <form method="POST" action= ""> <!--  action returns back to same page -->
+        {{form.hidden_tag()}} <!-- FOr security purpose-->
+        <fieldset class="form-group">
+            <legend class="border-bottom mb4"> Join Today </legend>
+            
+            <div class="form-group">
+                {{form.email.label(class = "form-control-label")}}
+                {% if form.email.errors %}
+                    {{ form.email(class="form-control form-control-lg is-invalid") }}
+                    <div class = "invalid-feedback">
+                        {% for error in form.email.errors %}
+                            <span>{{ error }} </span>
+                        {% endfor %}
+                    </div>
+                {% else %}    
+                     {{form.email(class = "form-control form-control-lg")}} <!-- Stringfield, form control shifts stringfield to next line -->
+                {% endif %}
+                   
+            </div>
+            
+           
+            </fieldset>
+            <div class="form-group">
+            
+            {{form.submit(class = "btn btn-outline-info")}} <!-- Stringfield, form control shifts stringfield to next line -->
+            </div>
+        
+        </form>
+        </div>
+  
+
+{% endblock content %}
