@@ -3,7 +3,7 @@ import secrets
 from PIL import Image
 from flask import url_for, current_app
 from flask_mail import Message
-from flaskblog import mail, app
+from flaskblog import mail
 
 
 
@@ -14,7 +14,7 @@ def save_picture(form_picture): # input will be form.picture.data, directory of 
     _, f_ext = os.path.splitext(form_picture.filename)
     # file name that needs to be saved
     picture_fn = random_hex + f_ext 
-    picture_path = os.path.join(app.root_path,"static/profile_pic/"+picture_fn)
+    picture_path = os.path.join(current_app.root_path,"static/profile_pic/"+picture_fn)
     output_size =(125,125)
     i = Image.open(form_picture)
     i.thumbnail(output_size)
