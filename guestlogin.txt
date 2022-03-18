@@ -1,0 +1,24 @@
+Abstraction is your friend. Rather than stuffing your views with conditionals, you should pass your views any sub-views you wish to be included in the output. Your view doesn't need to know the inner workings of these sub-views, and you can swap them out depending on whether the user is a normal user or a guest user.
+
+Here's a simplistic example:
+
+class View {
+    /** Does some view stuff... */
+
+    public function addSubview($name, Subview $subview) {
+        //store subviews to be used in the template
+    }
+}
+
+/** 
+ * Somewhere in a controller far far away...
+ */
+class GuestController extends Controller {
+    /** Does some controllery stuff... */
+
+    public function exec() {
+        //..
+        //prepare the view
+        $this->view->addSubview('toolbar', $guestToolbarSubview);
+    }
+}
