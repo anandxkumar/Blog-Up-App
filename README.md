@@ -28,7 +28,7 @@ Following is the link of application: [http://52.15.167.171:4455/](http://52.15.
 - Before pushing code to repository makes sure to pull the latest remote repository by `git remote add upstream https://github.com/anandxkumar/Blog-Up-App.git` and `git pull upstream main`, and resolve any merge conflict if exists
 
 ### For Non-Development Version
-- Clone this repository by typing git clone `https://github.com/Umesh-01/Blog-Up-App.git` command in git bash<br>
+- Clone this repository by typing git clone `https://github.com/anandxkumar/Blog-Up-App.git` command in git bash<br>
 - Install dependencies using `pip install -r requirements.txt`
 <p align="center">
   OR
